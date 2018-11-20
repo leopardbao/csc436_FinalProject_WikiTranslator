@@ -23,9 +23,12 @@ export class HistoryService {
     console.log('Add one record for translating.');
     var timestamp = (new Date).toISOString();
     var activity = 'Translate(' + target + ')';
-    var record = new SearchHistory(timestamp, activity, translateContent);
     let uid = this.authService.getUid();  
+    var record = new SearchHistory(timestamp, activity, translateContent);
+    var admin = new SearchHistory(timestamp, activity, translateContent);
+    admin.uid = uid;
     this.db.database.ref(`users/${uid}/history/`).push(record);
+    this.db.database.ref(`history/`).push(admin);
   }
 
 
@@ -33,9 +36,12 @@ export class HistoryService {
     console.log('iamcalled',translateContent)
     var timestamp = (new Date).toISOString();
     var activity = 'Toggle';
-    var record = new SearchHistory(timestamp, activity, translateContent);
     let uid = this.authService.getUid();  
+    var record = new SearchHistory(timestamp, activity, translateContent);
+    var admin = new SearchHistory(timestamp, activity, translateContent);
+    admin.uid = uid;
     this.db.database.ref(`users/${uid}/history/`).push(record);
+    this.db.database.ref(`history/`).push(admin);
   }
 
   addSearchHistory(keywords: string) {
@@ -44,12 +50,24 @@ export class HistoryService {
     var activity = 'Search';
     var record = new SearchHistory(timestamp, activity, keywords);
     let uid = this.authService.getUid(); 
+    var admin = new SearchHistory(timestamp, activity, keywords);
+    admin.uid = this.authService.getUid();
     this.db.database.ref(`users/${uid}/history/`).push(record);
+    this.db.database.ref(`history/`).push(admin);
   }
 
-  getRecords() {
+
+  getUserRecords() {
     const currentuser = this.afAuth.auth.currentUser.uid;
     const record = this.db.object(`users/${currentuser}/history`).snapshotChanges();
+    return record.switchMap(
+      (value) => {
+        return of(value.payload.val());
+      });
+  }
+
+  getAdminRecords() {
+    const record = this.db.object(`history`).snapshotChanges();
     return record.switchMap(
       (value) => {
         return of(value.payload.val());

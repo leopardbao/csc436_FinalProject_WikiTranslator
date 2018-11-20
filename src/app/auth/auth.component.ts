@@ -35,12 +35,12 @@ export class AuthComponent implements OnInit {
 
   emailLogin(email: string, password: string) {
     this.loginService.loginWithEmail(this.email, this.password)
-        .then(() => this.router.navigate(['/home']))
-        .catch( error => {
-          console.log(error);
-          this.router.navigate(['/auth']);
-          document.getElementById('invalidInf').innerHTML = 'The password or user is invalid!';
-        });
+      .then(() => this.router.navigate(['/home']))
+      .catch(error => {
+        console.log(error);
+        this.router.navigate(['/auth']);
+        document.getElementById('invalidInf').innerHTML = 'The password or user is invalid!';
+      });
   }
 
   logout() {
@@ -48,7 +48,13 @@ export class AuthComponent implements OnInit {
   }
 
   createUser() {
-    this.loginService.emailSignUp(this.email, this.password);
+    this.loginService.emailSignUp(this.email, this.password)
+      .then(() =>
+        document.getElementById('invalidInf').innerHTML = "Account creation successful! Log In!"
+      ).catch(error => {
+        document.getElementById('invalidInf').innerHTML = error;
+      });
+
   }
 }
 

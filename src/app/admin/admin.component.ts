@@ -3,12 +3,12 @@ import { SearchHistory } from '../models/search-history';
 import {HistoryService} from '../services/history.service';
 
 @Component({
-  selector: 'app-search-history',
-  templateUrl: './search-history.component.html',
-  styleUrls: ['./search-history.component.css']
+  selector: 'app-admin',
+  templateUrl: './admin.component.html',
+  styleUrls: ['./admin.component.css']
 })
 
-export class SearchHistoryComponent implements OnInit {
+export class AdminComponent implements OnInit {
   historyRecords: SearchHistory[];
 
   constructor(private historyService: HistoryService) { }
@@ -18,7 +18,7 @@ export class SearchHistoryComponent implements OnInit {
     // this.historyRecords = this.historyService.getRecords();
     // console.log(this.historyRecords);
 
-    this.historyService.getUserRecords()
+    this.historyService.getAdminRecords()
       .subscribe(
         value => {
           const history = [];

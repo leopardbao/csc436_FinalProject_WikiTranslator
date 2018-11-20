@@ -53,6 +53,7 @@ export class AuthService {
       return Object.keys(adminList).includes(uid);
     })
   }
+
   loginWithEmail(email: string, password: string) {
     return this.afAuth.auth.signInWithEmailAndPassword(email, password)
       .then((auth) => {
@@ -87,7 +88,7 @@ export class AuthService {
   }
 
   emailSignUp(email: string, password: string) {
-    this.afAuth.auth.createUserWithEmailAndPassword(email, password)
+    return this.afAuth.auth.createUserWithEmailAndPassword(email, password)
       .then(
         (newUser) => {
           console.log('new user created!');
@@ -99,7 +100,9 @@ export class AuthService {
           log.activity = "Sign up";
           log.time = createdAt;
           const payload: any = {};
-          payload[`users/${newUser.user.uid}/logHistory`] = log;
+          this.db.database.ref(`users/${newUser.user.uid}/logHistory`).push(log);
+          //add the user to the whitelist of the history.
+          // payload[`admins/${newUser.user.uid}`] = true;
           return this.db.database.ref().update(payload);
         })
       .catch(

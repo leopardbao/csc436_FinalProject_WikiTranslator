@@ -14,14 +14,16 @@ import { AppComponent } from './app.component';
 import { SearchHistoryComponent } from './search-history/search-history.component';
 import { AuthComponent } from './auth/auth.component';
 import { DashboardComponent } from './dashboard/dashboard.component';
+import { WikicardComponent } from './wikicard/wikicard.component';
+import { WordComponent } from './word/word.component';
+import { NavbarComponent } from './navbar/navbar.component';
+import { AdminComponent } from './admin/admin.component';
 
 import { WikipediaService } from './services/wikipedia.service';
 import { HistoryService } from './services/history.service';
 import { AuthService } from './services/auth.service';
 import { TranslateService } from './services/translate.service';
-import { WikicardComponent } from './wikicard/wikicard.component';
-import { WordComponent } from './word/word.component';
-import { NavbarComponent } from './navbar/navbar.component';
+
 
 
 
@@ -34,7 +36,8 @@ import { NavbarComponent } from './navbar/navbar.component';
     DashboardComponent,
     WikicardComponent,
     WordComponent,
-    NavbarComponent
+    NavbarComponent,
+    AdminComponent
   ],
   imports: [
     BrowserModule,

@@ -1,5 +1,6 @@
 export class SearchHistory {
     timestamp: string;
+    uid: string;
     activity: string;
     content: string;
 
