@@ -1,0 +1,24 @@
+<div class="card">
+  <div class="card-body h-100" >
+    <h5 class="card-title" style="text-overflow: ellipsis; overflow:hidden; white-space: nowrap; ">{{wikipedia.word}}</h5>
+    <div class="mb-3 subLink">
+    <a style="color:rgb(161, 157, 143) !important" href={{wikipedia.link}}>Wikipedia Link</a>
+    </div>
+    <div style="height: 20rem; overflow-y:scroll; text-overflow: ellipsis; ">
+        <p class="card-text">{{wikipedia.description}}</p>
+        <hr>
+        <div *ngIf="translatedWords.length >0" class="alert alert-success" role="alert">
+            Click on individual words to see the word in original language.
+        </div>
+        
+        <app-word *ngFor="let word of translatedWords" [(word)]="word" [target]="'English'"></app-word>
+    </div>
+  </div>
+  <div class="card-footer" >
+  
+  <select class="form-control mb-2" [(ngModel)]="selectTarget">
+    <option *ngFor="let target of targets" [value]="target">{{target}}</option>
+  </select>
+  <button style="background-color:rgb(69, 96, 104) !important" class="btn btn-ls btn-info btn-block" (click)="translate(wikipedia.description)">Translate</button>
+  </div>
+</div>

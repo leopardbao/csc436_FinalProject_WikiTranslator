@@ -1,0 +1,27 @@
+
+@import '../../../node_modules/bootstrap/dist/css/bootstrap.min.css';
+
+.header{
+    background-color: rgb(69, 96, 104);
+ }
+ 
+ .name {
+     display: inline;
+     padding-left: 10px;
+     padding-right: 10px;
+ }
+ 
+ .bottom{
+     position: absulte;
+     bottom: 0px;
+ }
+ 
+ .subLink{
+     margin-top: -8px;
+ }
+
+ .card:hover{
+     -webkit-box-shadow: -1px 9px 40px -12px rgba(0, 0, 0,0.75);
+     -moz-box-shadow: -1px 9px 40px -12px rgba(0, 0, 0,0.75);
+     box-shadow: -1px 9px 40px -12px rgba(0, 0, 0, 0.75);
+ }

@@ -1,0 +1,20 @@
+<app-navbar></app-navbar>
+<div>
+  <div class="col-10 mx-auto p-0 interval">
+
+    <form class="form-inline mb-3">
+      <div class="input-group col-8 mx-auto">
+        <input type="text" class="form-control " [(ngModel)]="searchText" name="first" placeholder="Search keywords from Wikipedia">
+        <div class="input-group-append">
+          <button class="btn btn-warning" type="submit" (click)="search()">Search </button>
+        </div>
+      </div>
+    </form>
+
+    <div class="row no-gutters">
+      <div *ngFor="let wikipedia of wikipediaResults" class="col-4 p-1 mt-2">
+        <app-wikicard [(wikipedia)]="wikipedia"></app-wikicard>
+      </div>
+    </div>
+  </div>
+</div>

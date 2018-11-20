@@ -1,0 +1,40 @@
+<div class="body">
+  <div class="text-center mx-auto title">
+    <img class="logo" src="assets/wikipedia.png" width="54" height="54">
+    <h1 class="name align-middle text-light">
+      Wikipedia Translator
+    </h1>
+  </div>
+
+  <form class="form-signin">
+    <div class="col-4  mx-auto">
+      <div class="frame">
+        <div class="text-center">
+          <h3 class="h3 mb-3 font-weight-light text-muted">Log In to Your Account</h3>
+        </div>
+
+        <div class="form-label-group input">
+          <input type="email" id="email" name="email" class="form-control" placeholder="Email address" required
+            autofocus [(ngModel)]="email">
+        </div>
+
+        <div class="form-label-group input">
+          <input type="password" id="password" name="password" class="form-control" placeholder="Password" required
+            [(ngModel)]="password">
+        </div>
+
+        <div class="checkbox mb-3">
+          <label>
+            <input type="checkbox" value="remember-me"> Remember me
+          </label>
+          <div id="invalidInf" class="text-danger"></div>
+        </div>
+
+
+        <button class="btn btn-lg btn-info btn-block" (click)="onLoginEmail()">Sign In</button>
+        <button class="btn btn-lg btn btn-warning btn-block" (click)="createUser()">Sign Up</button>
+      </div>
+    </div>
+
+  </form>
+</div>

@@ -1,0 +1,20 @@
+
+@import '../../../node_modules/bootstrap/dist/css/bootstrap.min.css';
+.header{
+   background-color: rgb(69, 96, 104);
+}
+
+.name {
+    display: inline;
+    padding-left: 10px;
+    padding-right: 10px;
+}
+
+.bottom{
+    position: absulte;
+    bottom: 0px;
+}
+
+.subLink{
+    margin-top: -8px;
+}

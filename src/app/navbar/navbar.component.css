@@ -1,0 +1,12 @@
+
+@import '../../../node_modules/bootstrap/dist/css/bootstrap.min.css';
+
+.logo {
+    display: inline;
+}
+
+.name {
+    display: inline;
+    padding-left: 10px;
+    padding-right: 10px;
+}

@@ -1,0 +1,31 @@
+@import '../../../node_modules/bootstrap/dist/css/bootstrap.min.css';
+
+.name {
+    display: inline;
+    padding-left: 10px;
+    padding-right: 10px;
+}
+.logo {
+    display: inline;
+}
+
+.title{
+    padding: 75px 0 75px 0;
+}
+
+.input{
+    margin: 10px 0 10px 0;
+}
+
+.frame{
+    background-color:rgb(255, 255, 255);
+    padding: 20px;  
+    box-shadow: 4px 4px 2px rgb(44, 44, 44);
+    border-radius: 4px;
+}
+
+.body {
+    background-color: rgb(69, 96, 104);
+    background-size: cover;
+    min-height: 100vh;
+}

@@ -1,0 +1,40 @@
+<app-navbar></app-navbar>
+<!-- <div class="col-6 mx-auto p-0 interval">
+  <h5>Search History</h5>
+  <table class="table">
+    <tr>
+      <th scope="col">Time</th>
+      <th scope="col">Keywords</th>
+    </tr>
+    <tr *ngFor="let record of historyRecords">
+      <td>{{record.timestamp}}</td>
+      <td>{{record.keywords}}</td>
+    </tr>
+  </table>
+</div> -->
+
+<div class="card mx-auto  mb-3" style="width: 80%">
+  <div class="card-header bg-warning">
+    <ul class="nav nav-tabs card-header-tabs">
+      <li class="nav-item">
+        <a class="nav-link active ">Search and Translate Records</a>
+      </li>
+    </ul>
+  </div>
+  <div class="card-body">
+
+    <table class="table">
+      <tr>
+        <th scope="col">Time</th>
+        <th scope="col">Activity</th>
+        <th scope="col">Content</th>
+      </tr>
+      <tr *ngFor="let record of historyRecords">
+        <td style="width:20%">{{record.timestamp | date:'medium' }}</td>
+        <td>{{record.activity}}</td>
+        <td>{{record.content}}</td>
+      </tr>
+    </table>
+  </div>
+
+</div>
