@@ -8,16 +8,16 @@ export const environment = {
 
 
 export const firebaseConfig = {
-  apiKey: "AIzaSyCdfZ558OWVNsXsVii4Xlv8CpcyunJWDkA",
-  authDomain: "wikitranslator-6995c.firebaseapp.com",
-  databaseURL: "https://wikitranslator-6995c.firebaseio.com",
-  projectId: "wikitranslator-6995c",
-  storageBucket: "wikitranslator-6995c.appspot.com",
-  messagingSenderId: "240124830696"
+  apiKey: "",
+  authDomain: "",
+  databaseURL: "",
+  projectId: "",
+  storageBucket: "",
+  messagingSenderId: ""
 };
 
 export const googleApi = {
-  key : 'AIzaSyCdfZ558OWVNsXsVii4Xlv8CpcyunJWDkA'
+  key : ''
 }
 
 /*
